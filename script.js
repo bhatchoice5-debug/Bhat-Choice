@@ -1,6 +1,6 @@
 const products=[
-{name:'Fast Charging Cable',cat:'Mobile Accessories',price:299,icon:'🔌'},
-{name:'Premium Phone Case',cat:'Mobile Accessories',price:399,icon:'📱'},
+{name:'Fast Charging Cable',cat:'Mobile Accessories',price:129,icon:'🔌'},
+{name:'Premium Phone Case',cat:'Mobile Accessories',price:196,icon:'📱'},
 {name:'Kashmiri Style Suit',cat:'Suits',price:1499,icon:'👗'},
 {name:'Casual Sneakers',cat:'Shoes',price:1299,icon:'👟'},
 {name:'Beauty Essentials',cat:'Cosmetics',price:699,icon:'💄'},
