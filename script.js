@@ -18,5 +18,5 @@ function filterCat(c){activeCat=c;document.getElementById('shop').scrollIntoView
 function add(i){cart.push(products[i]);document.getElementById('count').textContent=cart.length}
 function showCart(){document.getElementById('modal').style.display='block';const el=document.getElementById('cartItems');el.innerHTML=cart.length?cart.map((p,i)=>`<div class="item"><span>${p.name}</span><b>₹${p.price}</b></div>`).join(''):'<p>Your cart is empty.</p>';document.getElementById('total').textContent=cart.reduce((s,p)=>s+p.price,0)}
 function closeCart(){document.getElementById('modal').style.display='none'}
-function checkout(){if(!cart.length)return alert('Add a product first.');const msg=encodeURIComponent('Hello BHAT CHOICE! I want to order:\n'+cart.map(p=>p.name+' - ₹'+p.price).join('\n')+'\nTotal: ₹'+cart.reduce((s,p)=>s+p.price,0));window.open('https://wa.me/91XXXXXXXXXX?text='+msg,'_blank')}
+function checkout(){if(!cart.length)return alert('Add a product first.');const msg=encodeURIComponent('Hello BHAT CHOICE! I want to order:\n'+cart.map(p=>p.name+' - ₹'+p.price).join('\n')+'\nTotal: ₹'+cart.reduce((s,p)=>s+p.price,0));window.open('https://wa.me/917889928279?text='+msg,'_blank')}
 render();
