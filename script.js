@@ -1,12 +1,12 @@
 const products=[
-{name:'Fast Charging Cable',cat:'Mobile Accessories',price:129,icon:'🔌'},
+{name:'Fast Charging Cable',cat:'Mobile Accessories',price:155,icon:'🔌'},
 {name:'Premium Phone Case',cat:'Mobile Accessories',price:196,icon:'📱'},
-{name:'Kashmiri Style Suit',cat:'Suits',price:1499,icon:'👗'},
-{name:'Casual Sneakers',cat:'Shoes',price:1299,icon:'👟'},
-{name:'Beauty Essentials',cat:'Cosmetics',price:699,icon:'💄'},
-{name:'Fashion Jewellery Set',cat:'Jewellery',price:899,icon:'💎'},
+{name:'Kashmiri Style Suit',cat:'Suits',price:1199,icon:'👗'},
+{name:'Casual Sneakers',cat:'Shoes',price:1099,icon:'👟'},
+{name:'Beauty Essentials',cat:'Cosmetics',price:499,icon:'💄'},
+{name:'Fashion Jewellery Set',cat:'Jewellery',price:799,icon:'💎'},
 {name:'Everyday Backpack',cat:'Other',price:999,icon:'🎒'},
-{name:'Wireless Earbuds',cat:'Mobile Accessories',price:1199,icon:'🎧'}
+{name:'Wireless Earbuds',cat:'Mobile Accessories',price:479,icon:'🎧'}
 ];
 let cart=[], activeCat='';
 function render(){
