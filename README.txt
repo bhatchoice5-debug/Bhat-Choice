@@ -1,7 +1,7 @@
 BHAT CHOICE WEBSITE — STARTER
 
 1. Open index.html to preview the website.
-2. Replace 91XXXXXXXXXX in script.js with the shop's WhatsApp number.
+2. Replace 917889928279 in script.js with the shop's WhatsApp number.
 3. Replace the sample products in script.js with your real products/photos/prices.
 4. For a real store, buy a domain and hosting and upload these files.
 5. Before accepting online payments, add a proper payment gateway and server-side order system.
