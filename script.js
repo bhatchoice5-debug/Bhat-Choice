@@ -12,7 +12,7 @@ let cart=[], activeCat='';
 function render(){
  const q=document.getElementById('search').value.toLowerCase();
  const list=products.filter(p=>(!activeCat||p.cat===activeCat)&&(!q||p.name.toLowerCase().includes(q)));
- document.getElementById('products').innerHTML=list.map((p,i)=>`<article class="product"><div class="pic">${p.icon.endsWith('.png') ? <img src="${p.icon}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;"> : p.icon}</div><div class="product-body"><small>${p.cat}</small><h3>${p.name}</h3><div class="price">₹${p.price}</div><button class="add" onclick="add(${products.indexOf(p)})">Add to Cart</button></div></article>`).join('');
+ document.getElementById('products').innerHTML=list.map((p,i)=>`<article class="product"><div class="pic">${p.icon.endsWith('.png')?<img src="${p.icon}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;"> : p.icon}</div><div class="product-body"><small>${p.cat}</small><h3>${p.name}</h3><div class="price">₹${p.price}</div><button class="add" onclick="add(${products.indexOf(p)})">Add to Cart</button></div></article>`).join('');
 }
 function filterCat(c){activeCat=c;document.getElementById('shop').scrollIntoView({behavior:'smooth'});render()}
 function add(i){cart.push(products[i]);document.getElementById('count').textContent=cart.length}
