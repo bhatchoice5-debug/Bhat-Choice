@@ -1,63 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BHAT CHOICE — Kashmir Online Store</title>
-<meta name="description" content="BHAT CHOICE — online shopping for mobile accessories, suits, shoes, cosmetics and jewellery."><meta name="google-site-verification" content="hOiCXBlNB8g76B2fWFHnOpYlocwn_R_9MJL9BW4fGIM" />
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <div class="top">🚚 Kashmir delivery • Cash on Delivery available</div>
-  <nav>
-    <a class="logo" href="#">BHAT <span>CHOICE</span></a>
-    <div class="links">
-      <a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </div>
-    <button class="cart" onclick="showCart()">🛒 Cart <b id="count">0</b></button>
-  </nav>
-</header>
-
-<main>
-<section class="hero">
-  <div>
-    <p class="eyebrow">KASHMIR • ONLINE SHOPPING</p>
-    <h1>Everything you <span>choose</span>, in one place.</h1>
-    <p>Mobile accessories, suits, shoes, cosmetics, jewellery and more — from BHAT CHOICE.</p>
-    <a class="btn" href="#shop">Shop Now →</a>
-  </div>
-  <div class="hero-card"><div>BHAT<br><strong>CHOICE</strong></div><small>Your choice. Your store.</small></div>
-</section>
-
-<section id="categories">
-<h2>Shop by Category</h2>
-<div class="grid cats">
-  <button onclick="filterCat('Mobile Accessories')">📱<b>Mobile Accessories</b></button>
-  <button onclick="filterCat('Suits')">👗<b>Suits</b></button>
-  <button onclick="filterCat('Shoes')">👟<b>Shoes</b></button>
-  <button onclick="filterCat('Cosmetics')">💄<b>Cosmetics</b></button>
-  <button onclick="filterCat('Jewellery')">💎<b>Jewellery</b></button>
-  <button onclick="filterCat('Other')">🛍️<b>Other</b></button>
-</div>
-</section>
-
-<section id="shop">
-<div class="section-head"><div><p class="eyebrow">FEATURED</p><h2>Products</h2></div><input id="search" placeholder="Search products..." oninput="render()"></div>
-<div id="products" class="grid products"></div>
-</section>
-
-<section id="about" class="info"><h2>About BHAT CHOICE</h2><p>A Kashmir-based online shopping store bringing useful products and fashion choices together in one place.</p></section>
-<section id="contact" class="info"><h2>Contact</h2><p>📞<a href="tel:+917889928279">Call:+917889928279</a></p>
-<p>💬 <a href="https://wa.me/917889928279">WhatsApp Message</a></p>📍Kashmir,AnantnagJammu & Kashmir</p></section>
-</main>
-
-<div id="modal" class="modal" onclick="if(event.target===this)closeCart()"><div class="modal-box">
-<button class="x" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="total">Total: ₹<span id="total">0</span></div>
-<button class="btn full" onclick="checkout()">Order on WhatsApp</button>
-</div></div>
-
-<footer>© 2026 BHAT CHOICE • Kashmir</footer>
-<script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BHAT CHOICE — Kashmir Online Store</title><meta name="description" content="BHAT CHOICE — Kashmir online store"><meta name="google-site-verification" content="hOiCXBlNB8g76B2fWFHnOpYlocwn_R_9MJL9BW4fGIM"><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="brand">BHAT CHOICE</div><div class="tag">Kashmir Online Store</div><button id="cartBtn">🛒 Cart <span id="cartCount">0</span></button></header>
+<nav id="categories"><button class="cat active" data-cat="All">All</button><button class="cat" data-cat="Mobile Accessories">Mobile Accessories</button><button class="cat" data-cat="Suits">Suits</button><button class="cat" data-cat="Shoes">Shoes</button><button class="cat" data-cat="Cosmetics">Cosmetics</button><button class="cat" data-cat="Jewellery">Jewellery</button><button class="cat" data-cat="Other">Other</button></nav>
+<main><section class="hero"><h1>Shop with BHAT CHOICE</h1><p>Useful products and fashion choices from Kashmir.</p><a class="wa" href="https://wa.me/917889928279" target="_blank">💬 WhatsApp Us</a></section>
+<section class="tools"><input id="search" type="search" placeholder="Search products..."></section><section id="products" class="products"></section>
+<section class="info"><h2>How to Order</h2><p>Add products to cart, enter delivery details and choose COD or UPI.</p></section>
+<section class="info"><h2>About BHAT CHOICE</h2><p>A Kashmir-based online shopping store bringing useful products and fashion choices together in one place.</p></section>
+<section class="info"><h2>Contact</h2><p>📞 <a href="tel:+917889928279">Call: +91 7889928279</a></p><p>💬 <a href="https://wa.me/917889928279" target="_blank">WhatsApp Message</a></p><p>📍 Kashmir, Jammu & Kashmir</p></section></main>
+<div id="cartModal" class="modal hidden"><div class="modal-card"><button id="closeCart" class="close">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="total">Total: ₹<span id="cartTotal">0</span></div>
+<form id="orderForm"><h3>Delivery Details</h3><input name="name" required placeholder="Full Name"><input name="phone" required placeholder="Mobile Number"><input name="house" required placeholder="House / Flat No."><input name="area" required placeholder="Street / Area / Village"><input name="post" placeholder="Post Office"><input name="district" required placeholder="District"><input name="state" required value="Jammu & Kashmir" placeholder="State"><input name="pin" required placeholder="PIN Code"><input name="landmark" placeholder="Landmark (optional)"><h3>Payment</h3><label><input type="radio" name="payment" value="COD" checked> Cash on Delivery</label><label><input type="radio" name="payment" value="UPI"> UPI / QR Payment</label><div id="qrBox" class="qr hidden"><b>UPI payment</b><p>Your QR image can be added here later.</p></div><button class="submit" type="submit">Place Order on WhatsApp</button></form></div></div>
+<footer>© 2026 BHAT CHOICE — Kashmir</footer><script src="script.js"></script></body></html>
