@@ -1,14 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -16,22 +9,12 @@ body{
   color:#202020;
 }
 
-/* ================= HEADER ================= */
-
 header{
-  min-height:88px;
+  min-height:100px;
   padding:14px 5%;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(
-      90deg,
-      #ff304f 0%,
-      #ff8a00 25%,
-      #ffe600 50%,
-      #16c76b 75%,
-      #168cff 100%
-    );
+  background:linear-gradient(90deg,#ff304f 0%,#ff8a00 25%,#ffe600 50%,#16c76b 75%,#168cff 100%);
   box-shadow:0 5px 20px rgba(0,0,0,.12);
   position:sticky;
   top:0;
@@ -40,19 +23,19 @@ header{
 
 .brand{
   font-family:'Baloo 2',sans-serif;
-  font-size:38px;
-  font-weight:800;
-  line-height:.8;
+  font-size:46px;
+  font-weight:900;
+  line-height:.9;
   color:white;
   text-shadow:3px 4px 0 #e21f3d;
 }
 
 .tag{
-  margin-top:7px;
+  margin-top:8px;
   color:white;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:2px;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:2.5px;
   text-transform:uppercase;
 }
 
@@ -82,8 +65,6 @@ header{
   border-radius:20px;
   margin-left:4px;
 }
-
-/* ================= CATEGORY ================= */
 
 #categories{
   display:flex;
@@ -143,14 +124,10 @@ header{
   transform:translateY(-2px);
 }
 
-/* ================= MAIN ================= */
-
 main{
   width:min(1400px,90%);
   margin:auto;
 }
-
-/* ================= HERO ================= */
 
 .hero{
   margin-top:25px;
@@ -161,18 +138,10 @@ main{
   align-items:center;
   position:relative;
   overflow:hidden;
-
   background:
     radial-gradient(circle at 85% 20%,#ffe600 0 12%,transparent 30%),
     radial-gradient(circle at 80% 85%,#168cff 0 13%,transparent 32%),
-    linear-gradient(
-      120deg,
-      #ff304f,
-      #ff7b00 38%,
-      #16c76b 72%,
-      #168cff
-    );
-
+    linear-gradient(120deg,#ff304f,#ff7b00 38%,#16c76b 72%,#168cff);
   box-shadow:
     0 15px 35px rgba(0,0,0,.15),
     inset 0 0 80px rgba(255,255,255,.2);
@@ -257,8 +226,6 @@ main{
   transform:translateY(-4px) rotate(-1deg);
 }
 
-/* ================= SEARCH ================= */
-
 .tools{
   margin:32px 0 20px;
 }
@@ -280,8 +247,6 @@ main{
   border-color:#ff304f;
   box-shadow:5px 5px 0 #ffc3cc;
 }
-
-/* ================= PRODUCTS ================= */
 
 .products{
   display:grid;
@@ -397,8 +362,6 @@ main{
   transform:translateY(-2px);
 }
 
-/* ================= INFO ================= */
-
 .info{
   margin-top:24px;
   padding:35px;
@@ -441,8 +404,6 @@ main{
   color:#e51d42;
   font-weight:800;
 }
-
-/* ================= MODAL ================= */
 
 .modal{
   position:fixed;
@@ -494,8 +455,6 @@ main{
   color:#168cff;
 }
 
-/* ================= CART ================= */
-
 .item{
   display:flex;
   justify-content:space-between;
@@ -519,8 +478,6 @@ main{
   font-size:20px;
   font-weight:900;
 }
-
-/* ================= FORM ================= */
 
 #orderForm{
   display:flex;
@@ -547,8 +504,6 @@ main{
 #orderForm input:not([type="radio"]):focus{
   border-color:#168cff;
 }
-
-/* ================= PAYMENT ================= */
 
 .payment-box{
   padding:20px;
@@ -640,14 +595,7 @@ main{
   padding:16px;
   border:0;
   border-radius:15px;
-  background:
-    linear-gradient(
-      90deg,
-      #ff304f,
-      #ff8a00,
-      #16a85b,
-      #168cff
-    );
+  background:linear-gradient(90deg,#ff304f,#ff8a00,#16a85b,#168cff);
   color:#fff;
   font-weight:900;
   cursor:pointer;
@@ -660,47 +608,35 @@ main{
   box-shadow:7px 8px 0 #222;
 }
 
-/* ================= FOOTER ================= */
-
 footer{
   margin-top:60px;
   padding:45px 20px;
   text-align:center;
   color:#fff;
   font-weight:700;
-  background:
-    linear-gradient(
-      90deg,
-      #ff304f,
-      #ff8a00,
-      #16a85b,
-      #168cff
-    );
+  background:linear-gradient(90deg,#ff304f,#ff8a00,#16a85b,#168cff);
 }
 
-/* ================= MOBILE ================= */
-
 @media(max-width:1000px){
-
   .products{
     grid-template-columns:repeat(3,1fr);
   }
-
 }
 
 @media(max-width:700px){
 
   header{
-    min-height:75px;
+    min-height:85px;
     padding:10px 5%;
   }
 
   .brand{
-    font-size:27px;
+    font-size:34px;
   }
 
   .tag{
-    font-size:8px;
+    font-size:10px;
+    letter-spacing:2px;
   }
 
   #cartBtn{
@@ -767,10 +703,17 @@ footer{
     width:180px;
     height:180px;
   }
-
 }
 
 @media(max-width:420px){
+
+  .brand{
+    font-size:30px;
+  }
+
+  .tag{
+    font-size:9px;
+  }
 
   .hero h1{
     font-size:47px;
@@ -779,5 +722,4 @@ footer{
   .pic{
     height:150px;
   }
-
 }
