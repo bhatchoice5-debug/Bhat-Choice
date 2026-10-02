@@ -3,9 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>BHAT CHOICE — Kashmir Online Store</title>
+
 <meta name="description" content="BHAT CHOICE — Kashmir online store">
+
 <meta name="google-site-verification" content="hOiCXBlNB8g76B2fWFHnOpYlocwn_R_9MJL9BW4fGIM">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,103 +18,294 @@
 <header>
   <div class="brand">BHAT CHOICE</div>
   <div class="tag">Kashmir Online Store</div>
-  <button id="cartBtn">🛒 Cart <span id="cartCount">0</span></button>
+  <button id="cartBtn">
+    🛒 Cart <span id="cartCount">0</span>
+  </button>
 </header>
 
+
 <nav id="categories">
-  <button class="cat active" data-cat="All">All</button>
-  <button class="cat" data-cat="Mobile Accessories">Mobile Accessories</button>
-  <button class="cat" data-cat="Suits">Suits</button>
-  <button class="cat" data-cat="Shoes">Shoes</button>
-  <button class="cat" data-cat="Cosmetics">Cosmetics</button>
-  <button class="cat" data-cat="Jewellery">Jewellery</button>
-  <button class="cat" data-cat="Other">Other</button>
+
+  <button class="cat active" data-cat="All">
+    All
+  </button>
+
+  <button class="cat" data-cat="Mobile Accessories">
+    Mobile Accessories
+  </button>
+
+  <button class="cat" data-cat="Suits">
+    Suits
+  </button>
+
+  <button class="cat" data-cat="Shoes">
+    Shoes
+  </button>
+
+  <button class="cat" data-cat="Cosmetics">
+    Cosmetics
+  </button>
+
+  <button class="cat" data-cat="Jewellery">
+    Jewellery
+  </button>
+
+  <button class="cat" data-cat="Other">
+    Other
+  </button>
+
 </nav>
+
 
 <main>
 
 <section class="hero">
+
   <h1>Shop with BHAT CHOICE</h1>
-  <p>Useful products and fashion choices from Kashmir.</p>
-  <a class="wa" href="https://wa.me/917889928279" target="_blank">💬 WhatsApp Us</a>
+
+  <p>
+    Useful products and fashion choices from Kashmir.
+  </p>
+
+  <a
+    class="wa"
+    href="https://wa.me/917889928279"
+    target="_blank"
+  >
+    💬 WhatsApp Us
+  </a>
+
 </section>
+
 
 <section class="tools">
-  <input id="search" type="search" placeholder="Search products...">
+
+  <input
+    id="search"
+    type="search"
+    placeholder="Search products..."
+  >
+
 </section>
 
-<section id="products" class="products"></section>
+
+<section
+  id="products"
+  class="products"
+></section>
+
 
 <section class="info">
+
   <h2>How to Order</h2>
-  <p>Add products to cart, enter delivery details and choose COD or UPI.</p>
+
+  <p>
+    Add products to cart, enter delivery details
+    and choose COD or UPI.
+  </p>
+
 </section>
 
+
 <section class="info">
+
   <h2>About BHAT CHOICE</h2>
-  <p>A Kashmir-based online shopping store bringing useful products and fashion choices together in one place.</p>
+
+  <p>
+    A Kashmir-based online shopping store bringing
+    useful products and fashion choices together
+    in one place.
+  </p>
+
 </section>
 
+
 <section class="info">
+
   <h2>Contact</h2>
-  <p>📞 <a href="tel:+917889928279">Call: +91 7889928279</a></p>
-  <p>💬 <a href="https://wa.me/917889928279" target="_blank">WhatsApp Message</a></p>
-  <p>📍 Kashmir, Jammu & Kashmir</p>
+
+  <p>
+    📞
+    <a href="tel:+917889928279">
+      Call: +91 7889928279
+    </a>
+  </p>
+
+  <p>
+    💬
+    <a
+      href="https://wa.me/917889928279"
+      target="_blank"
+    >
+      WhatsApp Message
+    </a>
+  </p>
+
+  <p>
+    📍 Kashmir, Jammu & Kashmir
+  </p>
+
 </section>
 
 </main>
 
-<div id="cartModal" class="modal hidden">
+
+<div
+  id="cartModal"
+  class="modal hidden"
+>
 
   <div class="modal-card">
 
-    <button id="closeCart" class="close">×</button>
+    <button
+      id="closeCart"
+      class="close"
+    >
+      ×
+    </button>
+
 
     <h2>Your Cart</h2>
 
+
     <div id="cartItems"></div>
 
+
     <div class="total">
-      Total: ₹<span id="cartTotal">0</span>
+
+      Total: ₹
+      <span id="cartTotal">0</span>
+
     </div>
+
 
     <form id="orderForm">
 
+
       <h3>Delivery Details</h3>
 
-      <input name="name" required placeholder="Full Name">
-      <input name="phone" required placeholder="Mobile Number">
-      <input name="house" required placeholder="House / Flat No.">
-      <input name="area" required placeholder="Street / Area / Village">
-      <input name="post" placeholder="Post Office">
-      <input name="district" required placeholder="District">
-      <input name="state" required value="Jammu & Kashmir" placeholder="State">
-      <input name="pin" required placeholder="PIN Code">
-      <input name="landmark" placeholder="Landmark (optional)">
+
+      <input
+        name="name"
+        required
+        placeholder="Full Name"
+      >
+
+
+      <input
+        name="phone"
+        required
+        placeholder="Mobile Number"
+      >
+
+
+      <input
+        name="house"
+        required
+        placeholder="House / Flat No."
+      >
+
+
+      <input
+        name="area"
+        required
+        placeholder="Street / Area / Village"
+      >
+
+
+      <input
+        name="post"
+        placeholder="Post Office"
+      >
+
+
+      <input
+        name="district"
+        required
+        placeholder="District"
+      >
+
+
+      <input
+        name="state"
+        required
+        value="Jammu & Kashmir"
+        placeholder="State"
+      >
+
+
+      <input
+        name="pin"
+        required
+        placeholder="PIN Code"
+      >
+
+
+      <input
+        name="landmark"
+        placeholder="Landmark (optional)"
+      >
+
 
       <h3>Payment</h3>
 
+
       <label>
-        <input type="radio" name="payment" value="COD" checked
-        onchange="document.getElementById('qrBox').classList.add('hidden')">
+
+        <input
+          type="radio"
+          name="payment"
+          value="COD"
+          checked
+        >
+
         Cash on Delivery
+
       </label>
+
 
       <label>
-        <input type="radio" name="payment" value="UPI"
-        onchange="document.getElementById('qrBox').classList.remove('hidden')">
+
+        <input
+          type="radio"
+          name="payment"
+          value="UPI"
+        >
+
         UPI / QR Payment
+
       </label>
 
-      <div id="qrBox" class="qr hidden">
+
+      <!-- UPI QR CODE -->
+
+      <div id="qrBox" class="qr">
+
         <b>UPI Payment</b>
-        <p>Scan this QR code to pay.</p>
-        <img src="qr.png" alt="UPI Payment QR">
+
+        <p>
+          Scan this QR code to pay.
+        </p>
+
+        <img
+          src="qr.png"
+          alt="BHAT CHOICE UPI Payment QR"
+        >
+
+        <p>
+          UPI ID: bhatchoice5-1@oksbi
+        </p>
+
       </div>
 
-      <button class="submit" type="submit">
+
+      <button
+        class="submit"
+        type="submit"
+      >
         Place Order on WhatsApp
       </button>
+
 
     </form>
 
@@ -118,9 +313,13 @@
 
 </div>
 
+
 <footer>
+
   © 2026 BHAT CHOICE — Kashmir
+
 </footer>
+
 
 <script src="script.js"></script>
 
