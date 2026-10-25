@@ -1,96 +1,185 @@
-```html
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BHAT CHOICE KASHMIR</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101326">
+  <meta name="description" content="BHAT CHOICE KASHMIR — Shop fashion, accessories and more.">
+  <title>BHAT CHOICE KASHMIR | Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<div class="banner">✦ BHAT CHOICE KASHMIR — YOUR STYLE, YOUR CHOICE ✦</div>
+  <div class="announcement">🌟 Welcome to BHAT CHOICE KASHMIR — Shopping made special!</div>
 
-<header>
-  <a class="brand" href="#">BHAT CHOICE <span>KASHMIR</span>
-    <small>PREMIUM ONLINE STORE</small>
-  </a>
-  <button id="cartBtn">🛒 CART (<span id="count">0</span>)</button>
-</header>
-
-<section class="hero">
-  <p class="eyebrow">WELCOME TO BHAT CHOICE</p>
-  <h1>SHOP SMART.<br><span>LOOK PREMIUM.</span></h1>
-  <p>Fashion, mobile accessories, shoes and everyday essentials — all in one place.</p>
-  <a href="#shop" class="cta">EXPLORE PRODUCTS ↗</a>
-</section>
-
-<main id="shop">
-  <div class="heading">
-    <div><p class="eyebrow">OUR COLLECTION</p><h2>Shop Products</h2></div>
-    <input id="search" placeholder="Search products...">
-  </div>
-  <div id="cats" class="cats"></div>
-  <div id="products" class="products"></div>
-</main>
-
-<section class="why">
-  <p class="eyebrow">WHY BHAT CHOICE?</p>
-  <h2>Shopping Made Simple.</h2>
-  <div class="benefits">
-    <article><h3>✦ Quality Choices</h3><p>Explore products for everyday needs and personal style.</p></article>
-    <article><h3>⚡ Easy Ordering</h3><p>Choose products and send your order details on WhatsApp.</p></article>
-    <article><h3>💬 Contact Us</h3><p>Questions about your order? Message our shop.</p>
-      <a href="https://wa.me/917889928279" target="_blank" rel="noopener">CHAT ON WHATSAPP ↗</a>
-    </article>
-  </div>
-</section>
-
-<footer>
-  <h3>BHAT CHOICE <span>KASHMIR</span></h3>
-  Your Style. Your Choice. Your Store.
-  <p>© <span id="year"></span> BHAT CHOICE KASHMIR</p>
-</footer>
-
-<div id="modal" class="backdrop" hidden>
-  <section class="checkout">
-    <button id="close" class="close">×</button>
-    <p class="eyebrow">CHECKOUT</p>
-    <h2>QR Payment</h2>
-    <p class="notice">Scan the shop's REAL QR code using your UPI app. Check the payee name before paying.</p>
-
-    <div class="qr">
-      <img src="qr.png" alt="Shop payment QR code">
-      <small>Scan with your UPI app</small>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BHAT CHOICE KASHMIR home">
+      <span class="brand-mark">BC</span>
+      <span class="brand-name">BHAT CHOICE <b>KASHMIR</b><small>YOUR STYLE, YOUR CHOICE</small></span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-btn" id="profileBtn" type="button">👤 <span>Profile</span></button>
+      <button class="icon-btn" id="wishlistBtn" type="button">❤️ <span>Saved</span> <i id="wishCount">0</i></button>
+      <button class="cart-btn" id="cartBtn" type="button">🛒 Cart <b id="cartCount">0</b></button>
     </div>
+  </header>
 
-    <div id="summary" class="summary"></div>
+  <nav class="category-nav" aria-label="Product categories">
+    <button class="nav-chip active" data-category="All">All Products</button>
+    <button class="nav-chip" data-category="Mobile Accessories">📱 Accessories</button>
+    <button class="nav-chip" data-category="Suits">🧵 Suits</button>
+    <button class="nav-chip" data-category="Shoes">👟 Shoes</button>
+    <button class="nav-chip" data-category="Cosmetics">💄 Cosmetics</button>
+    <button class="nav-chip" data-category="Jewellery">💎 Jewellery</button>
+    <button class="nav-chip" data-category="Other">🎒 Other</button>
+  </nav>
 
-    <form id="form">
-      <label for="name">Your name</label>
-      <input id="name" required placeholder="Full name">
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">KASHMIR'S SHOPPING DESTINATION</span>
+        <h1>Style that speaks.<br><span>Choice that shines.</span></h1>
+        <p>Discover fashion, accessories and everyday favourites — all in one place.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="primary-btn">Explore Collection <span>→</span></a>
+          <button class="outline-btn" id="heroOffersBtn" type="button">🎁 View Offers</button>
+        </div>
+        <div class="hero-points"><span>✓ Easy shopping</span><span>✓ WhatsApp orders</span><span>✓ Secure payment process</span></div>
+      </div>
+      <div class="hero-art" aria-label="Shopping illustration">
+        <div class="art-orbit"></div><div class="art-bag">🛍️</div>
+        <span class="float-tag tag-one">✨ New picks</span>
+        <span class="float-tag tag-two">💙 Great style</span>
+        <span class="art-spark">✦</span>
+      </div>
+    </section>
 
-      <label for="phone">Mobile number</label>
-      <input id="phone" required placeholder="Contact number">
+    <section class="benefit-strip">
+      <div><span>🚚</span><p><b>Order Assistance</b><small>Talk to us on WhatsApp</small></p></div>
+      <div><span>💳</span><p><b>QR Payment</b><small>Submit payment details</small></p></div>
+      <div><span>💬</span><p><b>Personal Support</b><small>We're here to help</small></p></div>
+    </section>
 
-      <label for="address">Delivery address</label>
-      <textarea id="address" required placeholder="Full delivery address"></textarea>
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div><span class="eyebrow">FIND YOUR FAVOURITES</span><h2>Shop the collection <span>✦</span></h2><p>Handpicked products for your everyday style.</p></div>
+        <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products"><button id="clearSearch" type="button" aria-label="Clear search">×</button></div>
+      </div>
+      <div class="filter-row">
+        <div id="filterChips" class="filter-chips">
+          <button class="filter-chip active" data-category="All">All</button>
+          <button class="filter-chip" data-category="Mobile Accessories">Accessories</button>
+          <button class="filter-chip" data-category="Suits">Suits</button>
+          <button class="filter-chip" data-category="Shoes">Shoes</button>
+          <button class="filter-chip" data-category="Cosmetics">Cosmetics</button>
+          <button class="filter-chip" data-category="Jewellery">Jewellery</button>
+          <button class="filter-chip" data-category="Other">Other</button>
+        </div>
+        <label class="sort-wrap">Sort:
+          <select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="az">Name: A–Z</option></select>
+        </label>
+      </div>
+      <div class="result-line"><span id="resultCount">8 products</span><button id="resetFilters" type="button">Reset filters ↺</button></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state hidden" id="emptyProducts"><span>🔎</span><h3>No products found</h3><p>Try another search or category.</p><button class="primary-btn" id="emptyReset" type="button">Show all products</button></div>
+    </section>
 
-      <label for="utr">Transaction ID / UTR</label>
-      <input id="utr" required placeholder="Payment transaction reference">
+    <section class="offer-section" id="offers">
+      <div class="offer-copy"><span class="eyebrow">A LITTLE EXTRA FOR YOU</span><h2>Shopping feels better<br>with a <span>special offer.</span></h2><p>Use the demo coupon below at checkout. Discount applies to eligible cart items.</p><div class="coupon"><span>CHOICE10</span><button type="button" id="copyCoupon">Copy code</button></div><small>10% off · Maximum discount ₹300 · One code per order</small></div>
+      <div class="offer-visual"><span>🎁</span><strong>10%</strong><b>OFF</b><small>YOUR ORDER</small></div>
+    </section>
 
-      <label class="check">
-        <input type="checkbox" required>
-        I have completed payment and entered the correct transaction reference.
-      </label>
+    <section class="why-section">
+      <div class="section-heading centered"><div><span class="eyebrow">THE BHAT CHOICE PROMISE</span><h2>Shopping, made simple.</h2></div></div>
+      <div class="why-grid">
+        <article><span>🛍️</span><h3>Easy to Browse</h3><p>Search and explore products by category.</p></article>
+        <article><span>💬</span><h3>WhatsApp Support</h3><p>Send your order request directly to our shop.</p></article>
+        <article><span>🧾</span><h3>Clear Order Details</h3><p>Review your items and total before ordering.</p></article>
+      </div>
+    </section>
 
-      <button class="cta full" type="submit">SEND DETAILS ON WHATSAPP ↗</button>
-    </form>
+    <section class="tracking-section" id="tracking">
+      <div><span class="eyebrow">YOUR SHOPPING JOURNEY</span><h2>Track an order</h2><p>Check orders saved on this browser. Orders sent from another device may not appear here.</p></div>
+      <form id="trackForm" class="track-form"><label for="trackId">Order ID</label><div><input id="trackId" placeholder="Example: BC123456" required><button class="primary-btn" type="submit">Check status</button></div><p id="trackResult" class="track-result" aria-live="polite"></p></form>
+    </section>
+  </main>
 
-    <p class="notice">When WhatsApp opens, attach your payment screenshot before sending. Your order remains PENDING until the shop verifies payment. Never share your UPI PIN or OTP.</p>
-  </section>
-</div>
+  <footer class="site-footer">
+    <div class="footer-main"><a class="brand footer-brand" href="#"><span class="brand-mark">BC</span><span class="brand-name">BHAT CHOICE <b>KASHMIR</b><small>YOUR STYLE, YOUR CHOICE</small></span></a><p>Discover your next favourite. Shop with choice, shop with confidence.</p></div>
+    <div class="footer-links"><a href="#shop">Shop</a><a href="#offers">Offers</a><a href="#tracking">Track Order</a><a href="#paymentInfo">Payment Guide</a><button id="adminBtn" type="button">Admin tools</button></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> BHAT CHOICE KASHMIR</span><span>Made for your shopping experience ❤️</span></div>
+  </footer>
 
-<script src="script.js"></script>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>Your cart <span id="drawerCount">(0)</span></h2></div><button class="close-btn" data-close="cart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>🛍️</span><h3>Your cart is waiting</h3><p>Add something you love.</p><button class="primary-btn" data-close="cart">Continue shopping</button></div>
+    <div class="cart-bottom" id="cartBottom">
+      <div class="coupon-inline"><input id="couponInput" placeholder="Coupon code (CHOICE10)"><button id="applyCoupon" type="button">Apply</button></div><p id="couponMessage" class="small-message"></p>
+      <div class="bill-line"><span>Subtotal</span><b id="cartSubtotal">₹0</b></div><div class="bill-line discount-line"><span>Discount</span><b id="cartDiscount">−₹0</b></div><div class="bill-line total-line"><span>Total</span><b id="cartTotal">₹0</b></div>
+      <button class="primary-btn checkout-btn" id="checkoutBtn" type="button">Proceed to checkout →</button><small class="safe-note">Your order is not confirmed until payment is verified by the shop.</small>
+    </div>
+  </aside>
+
+  <!-- Checkout modal -->
+  <div class="modal-backdrop" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal modal-wide">
+      <div class="modal-head"><div><span class="eyebrow">ALMOST THERE</span><h2 id="checkoutTitle">Checkout & payment</h2></div><button class="close-btn" data-close="checkout" aria-label="Close checkout">×</button></div>
+      <div class="checkout-layout">
+        <form id="checkoutForm" class="checkout-form">
+          <h3>Delivery details</h3>
+          <label for="customerName">Full name *</label><input id="customerName" name="customerName" autocomplete="name" required maxlength="100" placeholder="Enter your full name">
+          <label for="customerPhone">Mobile number *</label><input id="customerPhone" name="customerPhone" autocomplete="tel" inputmode="tel" required pattern="[0-9 +()-]{10,18}" placeholder="Your contact number">
+          <label for="customerAddress">Delivery address *</label><textarea id="customerAddress" name="customerAddress" autocomplete="street-address" required maxlength="500" rows="3" placeholder="Village / street, area, district, PIN code"></textarea>
+          <label for="customerNote">Order note (optional)</label><textarea id="customerNote" name="customerNote" maxlength="300" rows="2" placeholder="Size, colour or other request"></textarea>
+          <div class="payment-note"><b>Before you submit</b><p>Pay using the QR only if the displayed QR belongs to the shop. Enter the correct UTR / Transaction ID. The shop must verify payment before confirming the order.</p></div>
+          <label class="check-label"><input id="paidCheck" type="checkbox" required> I have completed payment and entered the correct transaction details. *</label>
+          <label class="check-label"><input id="termsCheck" type="checkbox" required> I understand this is a request and is not confirmed until the shop verifies payment. *</label>
+          <button class="primary-btn checkout-submit" type="submit">Send order request on WhatsApp →</button>
+        </form>
+        <div class="payment-panel" id="paymentInfo">
+          <h3>Pay using QR</h3><p class="muted">Scan with your UPI app and pay the amount shown in your cart.</p>
+          <div class="qr-frame"><img id="paymentQR" src="qr.png" alt="Shop payment QR code" onerror="this.style.display='none';document.getElementById('qrFallback').classList.remove('hidden')"><div id="qrFallback" class="qr-fallback hidden">📷<b>QR image not found</b><small>Make sure qr.png is uploaded in the same folder as index.html.</small></div></div>
+          <div class="qr-warning">Check the receiver's name in your UPI app before paying.</div>
+          <label for="transactionId">Transaction ID / UTR *</label><input id="transactionId" required form="checkoutForm" maxlength="100" placeholder="Enter payment reference">
+          <div class="payment-total"><span>Amount to pay</span><b id="checkoutAmount">₹0</b></div>
+          <p class="muted small">After WhatsApp opens, send your payment screenshot in that chat. The website cannot verify a payment automatically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile modal -->
+  <div class="modal-backdrop" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <div class="modal">
+      <div class="modal-head"><div><span class="eyebrow">YOUR DETAILS</span><h2 id="profileTitle">Customer profile</h2></div><button class="close-btn" data-close="profile" aria-label="Close profile">×</button></div>
+      <form id="profileForm" class="stack-form"><label for="profileName">Name</label><input id="profileName" maxlength="100" placeholder="Your name"><label for="profilePhone">Mobile number</label><input id="profilePhone" maxlength="18" placeholder="Your phone number"><button class="primary-btn" type="submit">Save on this device</button></form>
+      <p class="muted small">This demo profile is saved only in this browser. It is not a secure online account.</p>
+      <h3 class="subheading">Recent orders on this device</h3><div id="profileOrders" class="profile-orders"></div>
+    </div>
+  </div>
+
+  <!-- Product detail modal -->
+  <div class="modal-backdrop" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productDetailTitle">
+    <div class="modal"><div class="modal-head"><span class="eyebrow">PRODUCT DETAILS</span><button class="close-btn" data-close="product" aria-label="Close details">×</button></div><div id="productDetailContent"></div></div>
+  </div>
+
+  <!-- Wishlist modal -->
+  <div class="modal-backdrop" id="wishlistModal" role="dialog" aria-modal="true" aria-labelledby="wishlistTitle">
+    <div class="modal"><div class="modal-head"><div><span class="eyebrow">YOUR SAVED PICKS</span><h2 id="wishlistTitle">Wishlist ❤️</h2></div><button class="close-btn" data-close="wishlist" aria-label="Close wishlist">×</button></div><div id="wishlistContent" class="wishlist-content"></div></div>
+  </div>
+
+  <!-- Admin demo modal -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <div class="modal modal-wide"><div class="modal-head"><div><span class="eyebrow">LOCAL DEMO ONLY</span><h2 id="adminTitle">Admin tools</h2></div><button class="close-btn" data-close="admin" aria-label="Close admin">×</button></div>
+      <div class="admin-warning">⚠️ This is not a secure admin login. Changes and orders are stored only in this browser. Do not use this for private customer data or real multi-device order management.</div>
+      <div class="admin-grid"><form id="adminProductForm" class="stack-form"><h3>Add a product</h3><label for="adminProductName">Product name</label><input id="adminProductName" required maxlength="100"><label for="adminProductCategory">Category</label><select id="adminProductCategory"><option>Mobile Accessories</option><option>Suits</option><option>Shoes</option><option>Cosmetics</option><option>Jewellery</option><option>Other</option></select><label for="adminProductPrice">Price (₹)</label><input id="adminProductPrice" type="number" min="1" max="1000000" required><label for="adminProductImage">Image filename (optional)</label><input id="adminProductImage" placeholder="example.png"><label for="adminProductEmoji">Emoji fallback</label><input id="adminProductEmoji" maxlength="8" value="🛍️"><button class="primary-btn" type="submit">Add to this browser</button><button class="outline-btn" id="restoreProducts" type="button">Restore default products</button></form><div><h3>Local order requests</h3><p class="muted small">Only requests created on this device appear here.</p><div id="adminOrders" class="admin-orders"></div><button class="outline-btn" id="exportOrders" type="button">Export order list (.json)</button></div></div>
+    </div>
+  </div>
 </body>
 </html>
-```
