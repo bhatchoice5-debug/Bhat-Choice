@@ -2,116 +2,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101020">
-  <title>BHAT CHOICE KASHMIR — Official Store</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#090b16;color:#fff}
-    .topbar{background:linear-gradient(90deg,#ff243d,#7b2cff,#00bd75);text-align:center;padding:10px;font-weight:900;font-size:13px;letter-spacing:1px}
-    header{padding:20px 5%;background:#101020;border-bottom:1px solid #ffffff20;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-    .brand{font-size:clamp(25px,5vw,43px);font-weight:1000;line-height:1.05;letter-spacing:-1.5px;background:linear-gradient(90deg,#ff354c,#fff,#18e49a,#4c8dff);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .tag{font-size:11px;letter-spacing:4px;color:#b8c4e7;margin-top:8px;font-weight:bold}
-    .cart{border:0;background:linear-gradient(110deg,#ff294d,#792dff);color:white;padding:13px 19px;border-radius:12px;font-weight:900;cursor:pointer}
-    .hero{margin:25px auto;width:90%;padding:clamp(30px,7vw,75px) 7%;border-radius:26px;overflow:hidden;background:radial-gradient(ellipse at 10% 100%,#00b96c66,transparent 40%),radial-gradient(ellipse at 90% 0%,#623dff99,transparent 45%),linear-gradient(120deg,#21132f,#101b36 60%,#311221);border:1px solid #ffffff25}
-    .eyebrow{color:#40f0b0;font-size:12px;font-weight:900;letter-spacing:3px}
-    .hero h1{font-size:clamp(38px,8vw,76px);line-height:.98;margin:18px 0;font-weight:1000;letter-spacing:-3px}
-    .hero h1 span{color:#ff4059}
-    .hero p{color:#d3d9ed;line-height:1.7;max-width:540px}
-    .hero button{margin-top:25px;padding:15px 24px;border:0;border-radius:12px;background:linear-gradient(90deg,#ff294d,#ff702e);color:#fff;font-weight:900;cursor:pointer}
-    .section{width:90%;margin:38px auto}
-    .section h2{font-size:clamp(25px,4vw,36px);font-weight:1000}
-    .section h2 span{color:#30e5a0}
-    .sub{color:#a8b0c9;margin-top:8px;font-size:14px}
-    .search{margin-top:22px;width:100%;padding:16px;border-radius:12px;background:#151a2d;border:1px solid #343b59;color:white;font-size:15px;outline:none}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 25px}
-    .filter{padding:10px 15px;border:1px solid #333c5b;border-radius:25px;background:#151a2d;color:#fff;font-weight:800;cursor:pointer}
-    .filter.active,.filter:hover{background:linear-gradient(90deg,#ff294d,#742dff);border-color:transparent}
-    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:17px}
-    .product{background:linear-gradient(145deg,#191e32,#101321);border:1px solid #ffffff16;border-radius:18px;overflow:hidden;transition:.25s}
-    .product:hover{transform:translateY(-5px);border-color:#35e8a1;box-shadow:0 12px 35px #0007}
-    .product-image{height:155px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#34355a,#15182a);font-size:65px}
-    .product-image img{width:100%;height:100%;object-fit:cover}
-    .product-info{padding:15px}
-    .product h3{font-size:15px;line-height:1.4;min-height:40px}
-    .price{color:#40efaa;font-size:20px;font-weight:1000;margin:12px 0}
-    .add{width:100%;border:0;border-radius:9px;padding:11px;background:linear-gradient(90deg,#ff294d,#7b2cff);color:#fff;font-weight:900;cursor:pointer}
-    .empty{color:#b8c4e7;padding:20px 0}
-    footer{margin-top:50px;padding:30px 5%;text-align:center;background:#101020;color:#aeb6ce;line-height:2}
-    footer strong{color:#fff}
-    @media(max-width:480px){header{padding:17px 5%}.tag{letter-spacing:2px}.hero{width:92%;border-radius:20px}.section{width:92%}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product-image{height:130px}.product-info{padding:11px}.product h3{font-size:13px}.price{font-size:18px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101020">
+<title>BHAT CHOICE KASHMIR — Official Store</title>
+<style>
+:root{--red:#ff294b;--green:#16d99a;--blue:#5277ff;--bg:#090b14;--panel:#14182a;--text:#fff;--muted:#aeb7d0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.promo{padding:10px;text-align:center;font-size:12px;font-weight:900;letter-spacing:1px;background:linear-gradient(90deg,#e91e43,#6c35ed,#08a875)}
+header{padding:20px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:#101322;border-bottom:1px solid #ffffff20}
+.logo{font-size:clamp(27px,5vw,46px);font-weight:1000;letter-spacing:-1.8px;line-height:1.1;background:linear-gradient(90deg,#ff4059,#fff,#23e7a2,#7095ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font-size:11px;color:#c1c9e4;letter-spacing:3px;margin-top:8px;font-weight:800}
+.contact{font-size:13px;color:#dce3ff;margin-top:9px}
+.contact a{color:#35e6a3;text-decoration:none;font-weight:bold}
+.cart-btn,.primary{border:0;border-radius:12px;padding:14px 19px;color:white;font-weight:900;background:linear-gradient(110deg,var(--red),#8035ff);box-shadow:0 6px 22px #7e2cff35}
+.hero{width:90%;margin:27px auto;border-radius:24px;overflow:hidden;padding:clamp(30px,7vw,76px);border:1px solid #ffffff24;background:radial-gradient(ellipse at 5% 100%,#00d78b55,transparent 40%),radial-gradient(ellipse at 100% 0%,#7546ff88,transparent 42%),linear-gradient(120deg,#28142d,#101b36 65%,#361321)}
+.kicker{font-size:12px;letter-spacing:3px;color:#38efad;font-weight:900}
+.hero h1{font-size:clamp(38px,8vw,78px);line-height:.98;letter-spacing:-3px;margin:18px 0;font-weight:1000}
+.hero h1 span{color:#ff3858}
+.hero p{max-width:570px;color:#d8ddef;line-height:1.8}
+.hero .primary{margin-top:24px;background:linear-gradient(90deg,#ff294b,#ff742e)}
+.trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.trust span{font-size:12px;padding:9px 12px;border:1px solid #ffffff25;border-radius:20px;background:#ffffff09}
+.section{width:90%;margin:40px auto}
+.section-title{font-size:clamp(26px,4vw,38px);font-weight:1000}
+.section-title span{color:var(--green)}
+.muted{color:var(--muted);font-size:14px;margin-top:8px}
+.search{width:100%;margin-top:22px;padding:15px;border-radius:12px;border:1px solid #323955;background:#14182a;color:#fff;outline:none}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0 24px}
+.filter{border:1px solid #343b59;background:#15192a;color:white;border-radius:22px;padding:10px 15px;font-size:13px;font-weight:800}
+.filter.active,.filter:hover{background:linear-gradient(90deg,#ef294b,#703aff);border-color:transparent}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.product{min-width:0;overflow:hidden;border:1px solid #ffffff16;border-radius:18px;background:linear-gradient(145deg,#1a2035,#111422);transition:transform .2s,border-color .2s}
+.product:hover{transform:translateY(-5px);border-color:#28dca0}
+.photo{height:210px;background:radial-gradient(circle,#343958,#171a2b);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .emoji{font-size:68px}
+.info{padding:15px}
+.category{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#a9b4d7;font-weight:900}
+.info h3{font-size:16px;margin-top:8px;line-height:1.4;min-height:42px}
+.price{font-size:22px;color:#35e7a4;font-weight:1000;margin:12px 0}
+.add{width:100%;border:0;border-radius:9px;padding:12px;background:linear-gradient(90deg,#ff294b,#713bff);color:#fff;font-weight:900}
+.added{font-size:12px;color:#42efad;margin-top:8px;min-height:14px}
+.empty{padding:20px;color:#c1c9e4}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.benefit{padding:20px;border-radius:15px;background:#14182a;border:1px solid #ffffff16}
+.benefit b{display:block;margin-bottom:8px}
+.benefit p{font-size:13px;line-height:1.6;color:var(--muted)}
+footer{margin-top:55px;padding:35px 5%;text-align:center;background:#101322;border-top:1px solid #ffffff18;color:#bac3dc;line-height:2}
+footer strong{color:white;font-size:21px}
+footer a{color:#37e9a7;text-decoration:none}
+.overlay{display:none;position:fixed;inset:0;background:#000c;z-index:20;overflow:auto;padding:18px}
+.overlay.show{display:flex;align-items:flex-start;justify-content:center}
+.modal{width:min(650px,100%);margin:auto;background:#13182a;border:1px solid #ffffff24;border-radius:18px;padding:22px}
+.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:17px}
+.close{background:#30354a;color:#fff;border:0;border-radius:9px;padding:9px 12px}
+.cart-line{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #ffffff17;align-items:center}
+.qty{display:flex;gap:8px;align-items:center}
+.qty button{padding:5px 10px;background:#303650;color:#fff;border:0;border-radius:6px}
+.remove{background:transparent;border:0;color:#ff7184;font-size:12px;margin-top:5px}
+.total{display:flex;justify-content:space-between;font-size:21px;font-weight:900;padding:18px 0}
+.field{margin:13px 0}
+.field label{display:block;margin-bottom:7px;font-size:13px;font-weight:800;color:#dce3ff}
+.field input,.field select{width:100%;padding:13px;border-radius:10px;border:1px solid #353c5a;background:#0c1020;color:#fff}
+.paybox{margin:15px 0;padding:16px;border:1px solid #39415e;border-radius:13px;background:#0d1120}
+.qr{display:block;width:min(230px,100%);height:auto;max-height:270px;object-fit:contain;margin:14px auto;background:white;padding:8px;border-radius:10px}
+.upi{text-align:center;font-size:14px;color:#43edb0;font-weight:900;overflow-wrap:anywhere}
+.note{font-size:12px;line-height:1.6;color:#b7c0d9;margin-top:10px}
+.full{width:100%;margin-top:12px}
+.whatsapp{background:linear-gradient(90deg,#087b48,#16b96e)}
+@media(max-width:850px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{height:180px}}
+@media(max-width:580px){header{padding:17px 4%}.logo{font-size:clamp(23px,6.2vw,34px);letter-spacing:-1px}.tag{letter-spacing:1.8px}.hero,.section{width:92%}.hero{border-radius:18px}.hero h1{letter-spacing:-1.8px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.photo{height:145px}.info{padding:11px}.info h3{font-size:14px;min-height:40px}.price{font-size:19px}.benefits{grid-template-columns:1fr}.cart-btn{padding:12px}.modal{padding:16px}}
+</style>
 </head>
 <body>
-  <div class="topbar">✦ KASHMIR'S STYLE • QUALITY • CHOICE ✦</div>
-  <header>
-    <div>
-      <div class="brand">BHAT CHOICE KASHMIR</div>
-      <div class="tag">YOUR CHOICE. OUR PROMISE.</div>
+<div class="promo">✦ BHAT CHOICE KASHMIR • STYLE • QUALITY • TRUST ✦</div>
+
+<header>
+  <div>
+    <div class="logo">BHAT CHOICE KASHMIR</div>
+    <div class="tag">YOUR CHOICE. OUR PROMISE.</div>
+    <div class="contact">📍 Kashmir, Jammu &amp; Kashmir &nbsp; | &nbsp; 📞 <a href="tel:+917889928279">7889928279</a></div>
+  </div>
+  <button class="cart-btn" onclick="openCart()">🛒 MY CART (<span id="cartCount">0</span>)</button>
+</header>
+
+<section class="hero">
+  <div class="kicker">WELCOME TO OUR ONLINE STORE</div>
+  <h1>YOUR STYLE.<br><span>YOUR CHOICE.</span><br>YOUR KASHMIR.</h1>
+  <p>Discover suits, fashion, shoes, accessories and everyday essentials — all in one place. Choose your favourites and order directly with BHAT CHOICE KASHMIR.</p>
+  <button class="primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">SHOP NOW &nbsp; ↓</button>
+  <div class="trust"><span>✦ Stylish Collection</span><span>✦ Easy Ordering</span><span>✦ Direct WhatsApp Contact</span></div>
+</section>
+
+<section class="section" id="shop">
+  <h2 class="section-title">EXPLORE OUR <span>COLLECTION</span></h2>
+  <p class="muted">Find your favourite product and add it to your cart.</p>
+  <input class="search" id="search" placeholder="🔍  Search products..." oninput="renderProducts()">
+  <div class="filters" id="filters"></div>
+  <div class="products" id="products"></div>
+  <div class="benefits">
+    <div class="benefit"><b>🛍️ Easy Shopping</b><p>Select your products and check your cart before ordering.</p></div>
+    <div class="benefit"><b>📲 Direct Contact</b><p>Contact BHAT CHOICE KASHMIR on WhatsApp for order assistance.</p></div>
+    <div class="benefit"><b>🔐 Payment Verification</b><p>QR payments are subject to verification before an order is confirmed.</p></div>
+  </div>
+</section>
+
+<footer>
+  <strong>BHAT CHOICE KASHMIR</strong><br>
+  Your Choice. Our Promise.<br>
+  📞 <a href="tel:+917889928279">+91 7889928279</a><br>
+  <a href="https://wa.me/917889928279" target="_blank" rel="noopener">Chat with us on WhatsApp</a><br>
+  <small>Thank you for choosing BHAT CHOICE KASHMIR ❤️</small>
+</footer>
+
+<div class="overlay" id="cartOverlay">
+  <div class="modal">
+    <div class="modal-head"><h2>🛒 Your Cart</h2><button class="close" onclick="closeCart()">✕ Close</button></div>
+    <div id="cartItems"></div>
+    <div class="total"><span>Total</span><span id="cartTotal">₹0</span></div>
+
+    <h3 style="margin:15px 0">Delivery Details</h3>
+    <div class="field"><label for="customerName">Your Name *</label><input id="customerName" placeholder="Enter your full name" required></div>
+    <div class="field"><label for="customerPhone">Phone Number *</label><input id="customerPhone" type="tel" placeholder="Your contact number" required></div>
+    <div class="field"><label for="customerAddress">Full Delivery Address *</label><input id="customerAddress" placeholder="Village / Town, District, PIN code" required></div>
+    <div class="field"><label for="paymentMethod">Payment Method *</label>
+      <select id="paymentMethod" onchange="togglePayment()">
+        <option value="QR">Pay by QR / UPI</option>
+        <option value="COD">Cash on Delivery (confirm availability on WhatsApp)</option>
+      </select>
     </div>
-    <button class="cart" onclick="alert('Cart feature ko apne existing checkout code se connect karein.')">🛒 CART <span id="cartCount">0</span></button>
-  </header>
 
-  <section class="hero">
-    <div class="eyebrow">WELCOME TO THE OFFICIAL STORE</div>
-    <h1>STYLE THAT<br><span>MAKES YOU</span><br>STAND OUT.</h1>
-    <p>Discover your favourites in fashion, accessories and everyday essentials. Explore the collection and find your perfect choice.</p>
-    <button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">EXPLORE COLLECTION ↓</button>
-  </section>
+    <div class="paybox" id="qrBox">
+      <h3 style="text-align:center">📲 Scan &amp; Pay</h3>
+      <img class="qr" src="qr.png" alt="BHAT CHOICE KASHMIR payment QR" onerror="this.style.display='none';document.getElementById('qrError').style.display='block'">
+      <p id="qrError" class="note" style="display:none;text-align:center">QR image not found. Please check that qr.png is uploaded in the repository root.</p>
+      <p class="upi">UPI ID: bhatchoice5-1@oksbi</p>
+      <div class="field"><label for="transactionId">Transaction ID / UTR *</label><input id="transactionId" placeholder="Enter payment transaction ID"></div>
+      <p class="note">After payment, tap the WhatsApp button below to send your order and transaction ID. In WhatsApp, attach your payment screenshot manually. Your order is NOT confirmed until payment is verified by the store.</p>
+    </div>
 
-  <main class="section" id="shop">
-    <h2>SHOP THE <span>COLLECTION</span></h2>
-    <p class="sub">Find something made for your style.</p>
-    <input class="search" id="search" placeholder="🔍 Search products..." oninput="renderProducts()">
-    <div class="filters" id="filters"></div>
-    <div class="products" id="products"></div>
-  </main>
+    <button class="primary full whatsapp" onclick="placeOrder()">📲 SEND ORDER ON WHATSAPP</button>
+    <button class="close full" onclick="closeCart()">Continue Shopping</button>
+    <p class="note">For QR orders, payment must be verified before confirmation. Sending a message alone does not confirm payment.</p>
+  </div>
+</div>
 
-  <footer>
-    <strong>BHAT CHOICE KASHMIR</strong><br>
-    Your Choice. Our Promise.<br>
-    <span>Thank you for shopping with us ❤️</span>
-  </footer>
+<script>
+const productsData = [
+ {id:1,name:"Fast Charging Cable",category:"Mobile Accessories",price:155,image:"fast_charging_cable.png",icon:"🔌"},
+ {id:2,name:"Premium Phone Case",category:"Mobile Accessories",price:196,image:"premium_phone_case.png",icon:"📱"},
+ {id:3,name:"Kashmiri Style Suit",category:"Suits",price:1199,image:"suit kashmire.png",icon:"👗"},
+ {id:4,name:"Casual Sneakers",category:"Shoes",price:1099,image:"casual_sneakers.png",icon:"👟"},
+ {id:5,name:"Beauty Essentials",category:"Cosmetics",price:499,image:"beauty_essentials.png",icon:"💄"},
+ {id:6,name:"Fashion Jewellery Set",category:"Jewellery",price:799,image:"fashion_jewellery_set.png",icon:"💎"},
+ {id:7,name:"Everyday Backpack",category:"Other",price:999,image:"everyday_backpack.png",icon:"🎒"},
+ {id:8,name:"Wireless Earbuds",category:"Mobile Accessories",price:479,image:"wireless_earbuds.png",icon:"🎧"}
+];
 
-  <script>
-    const items = [
-      {name:"Fast Charging Cable",category:"Mobile Accessories",price:155,icon:"🔌"},
-      {name:"Premium Phone Case",category:"Mobile Accessories",price:196,icon:"📱"},
-      {name:"Kashmiri Style Suit",category:"Suits",price:1199,image:"suit kashmire.png",icon:"👗"},
-      {name:"Casual Sneakers",category:"Shoes",price:1099,icon:"👟"},
-      {name:"Beauty Essentials",category:"Cosmetics",price:499,icon:"💄"},
-      {name:"Fashion Jewellery Set",category:"Jewellery",price:799,icon:"💎"},
-      {name:"Everyday Backpack",category:"Other",price:999,icon:"🎒"},
-      {name:"Wireless Earbuds",category:"Mobile Accessories",price:479,icon:"🎧"}
-    ];
-    let activeCat="All", cartCount=0;
-    const categories=["All",...new Set(items.map(p=>p.category))];
+let activeCategory="All";
+let cart=[];
 
-    function renderFilters(){
-      document.getElementById("filters").innerHTML=categories.map(c=>
-        `<button class="filter ${c===activeCat?"active":""}" onclick="setCategory(${JSON.stringify(c)})">${c}</button>`
-      ).join("");
-    }
-    function setCategory(c){activeCat=c;renderFilters();renderProducts()}
-    function renderProducts(){
-      const q=document.getElementById("search").value.toLowerCase();
-      const list=items.filter(p=>(activeCat==="All"||p.category===activeCat)&&p.name.toLowerCase().includes(q));
-      document.getElementById("products").innerHTML=list.length?list.map((p)=>{
-        const visual=p.image?`<img src="${p.image}" alt="${p.name}" onerror="this.outerHTML='${p.icon}'">`:p.icon;
-        return `<article class="product">
-          <div class="product-image">${visual}</div>
-          <div class="product-info">
-            <h3>${p.name}</h3>
-            <div class="price">₹${p.price}</div>
-            <button class="add" onclick="addToCart()">＋ ADD TO CART</button>
-          </div>
-        </article>`;
-      }).join(""):'<p class="empty">No products found. Try another search.</p>';
-    }
-    function addToCart(){cartCount++;document.getElementById("cartCount").textContent=cartCount}
-    renderFilters();renderProducts();
-  </script>
+const categories=["All",...new Set(productsData.map(p=>p.category))];
+
+function renderFilters(){
+ document.getElementById("filters").innerHTML=categories.map(c=>
+ `<button class="filter ${activeCategory===c?"active":""}" onclick="setCategory('${c.replace(/'/g,"\\'")}')">${c}</button>`
+ ).join("");
+}
+
+function setCategory(c){activeCategory=c;renderFilters();renderProducts()}
+
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const list=productsData.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&p.name.toLowerCase().includes(q));
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`
+ <article class="product">
+   <div class="photo">
+     <img src="${p.image}" alt="${p.name}" loading="lazy"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+     <span class="emoji" style="display:none">${p.icon}</span>
+   </div>
+   <div class="info">
+     <div class="category">${p.category}</div>
+     <h3>${p.name}</h3>
+     <div class="price">₹${p.price}</div>
+     <button class="add" onclick="addToCart(${p.id})">＋ ADD TO CART</button>
+     <div class="added" id="added-${p.id}"></div>
+   </div>
+ </article>`).join(""):'<p class="empty">No products found. Try another search.</p>';
+}
+
+function addToCart(id){
+ const product=productsData.find(p=>p.id===id);
+ const existing=cart.find(p=>p.id===id);
+ if(existing)existing.qty++;
+ else cart.push({...product,qty:1});
+ updateCart();
+ const msg=document.getElementById("added-"+id);
+ if(msg)msg.textContent="✓ Added to cart";
+}
+
+function changeQty(id,delta){
+ const p=cart.find(p=>p.id===id);
+ if(!p)return;
+ p.qty+=delta;
+ if(p.qty<=0)cart=cart.filter(x=>x.id!==id);
+ updateCart();
+}
+
+function updateCart(){
+ document.getElementById("cartCount").textContent=cart.reduce((n,p)=>n+p.qty,0);
+ document.getElementById("cartTotal").textContent="₹"+cart.reduce((n,p)=>n+p.price*p.qty,0);
+ document.getElementById("cartItems").innerHTML=cart.length?cart.map(p=>`
+ <div class="cart-line">
+   <div><b>${p.name}</b><br><span style="color:#39e7a5">₹${p.price*p.qty}</span><br>
+   <button class="remove" onclick="changeQty(${p.id},-${p.qty})">Remove</button></div>
+   <div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><b>${p.qty}</b><button onclick="changeQty(${p.id},1)">+</button></div>
+ </div>`).join(""):'<p class="muted">Your cart is empty. Add products to continue.</p>';
+}
+
+function openCart(){
+ document.getElementById("cartOverlay").classList.add("show");
+ updateCart();togglePayment();
+}
+function closeCart(){document.getElementById("cartOverlay").classList.remove("show")}
+function togglePayment(){
+ const isQR=document.getElementById("paymentMethod").value==="QR";
+ document.getElementById("qrBox").style.display=isQR?"block":"none";
+}
+
+function placeOrder(){
+ if(!cart.length){alert("Please add at least one product to your cart.");return}
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+ const method=document.getElementById("paymentMethod").value;
+ const transaction=document.getElementById("transactionId").value.trim();
+
+ if(!name||!phone||!address){alert("Please fill in your name, phone number and delivery address.");return}
+ if(method==="QR"&&!transaction){alert("Please enter your payment Transaction ID / UTR.");return}
+
+ const total=cart.reduce((n,p)=>n+p.price*p.qty,0);
+ let message="BHAT CHOICE KASHMIR - NEW ORDER%0A";
+ const lines=[
+ "Customer: "+name,
+ "Phone: "+phone,
+ "Address: "+address,
+ "",
+ "ORDER ITEMS:"
+ ];
+ cart.forEach(p=>lines.push(p.name+" x "+p.qty+" = Rs "+(p.price*p.qty)));
+ lines.push("TOTAL: Rs "+total,"Payment method: "+(method==="QR"?"QR / UPI":"Cash on Delivery"));
+ if(method==="QR"){
+   lines.push("Transaction ID / UTR: "+transaction);
+   lines.push("Payment status: AWAITING STORE VERIFICATION");
+   lines.push("I will attach the payment screenshot in this WhatsApp chat.");
+ }else{
+   lines.push("COD availability to be confirmed by store.");
+ }
+ message+=encodeURIComponent(lines.join("\n"));
+ window.open("https://wa.me/917889928279?text="+message,"_blank");
+}
+
+renderFilters();
+renderProducts();
+updateCart();
+</script>
 </body>
 </html>
 ```
